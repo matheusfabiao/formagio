@@ -1,0 +1,19 @@
+/* Navbar Padrão */
+#navbar {
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+/* Navbar ao rolar a página */
+#navbar.scrolled {
+    background-color: #FFF7DC !important;
+    backdrop-filter: blur(5px);
+}
+
+#navbar.scrolled .nav-link {
+    color: #000 !important;
+}
+
+#navbar.scrolled .nav-link:hover {
+    color: #555 !important;
+}
