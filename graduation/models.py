@@ -19,7 +19,7 @@ class Guest(models.Model):
     )
 
     created_at = models.DateTimeField(
-        verbose_name='Data de criação',
+        verbose_name='Data de confirmação',
         auto_now_add=True,
     )
 
