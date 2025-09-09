@@ -1,0 +1,17 @@
+<h1>Lista de convidados confirmados</h1>
+
+<form method="GET" action="{% url 'guest_list' %}">
+    <input type="text" name="search" placeholder="Buscar convidado...">
+    <button type="submit">Buscar</button>
+</form>
+
+{% if guests %}
+    <ul>
+        {% for guest in guests %}
+            <li>{{ guest.name }} - {{ guest.email }}</li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+    <p>Não há convidados confirmados.</p>
+{% endif %}
