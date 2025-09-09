@@ -1,0 +1,10 @@
+/* Variables */
+@import './variables.css';
+
+/* Globals */
+@import './globals.css';
+
+/* Pages */
+
+/* Home */
+@import './graduation/home.css';

@@ -6,7 +6,7 @@ from .models import Guest
 
 
 class HomeView(TemplateView):
-    template_name = 'home.html'
+    template_name = 'graduation/home.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -16,7 +16,7 @@ class HomeView(TemplateView):
 
 class GuestListView(ListView):
     model = Guest
-    template_name = 'guest_list.html'
+    template_name = 'graduation/guest_list.html'
     context_object_name = 'guests'
 
     def get_queryset(self):
@@ -31,7 +31,7 @@ class GuestListView(ListView):
 
 
 class GuestFormView(FormView):
-    template_name = 'guest_form.html'
+    template_name = 'graduation/guest_form.html'
     form_class = GuestForm
     success_url = '/'
 

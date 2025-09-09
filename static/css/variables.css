@@ -1,0 +1,23 @@
+/* :root {
+  --vinho-escuro: #6C1529;
+  --creme-claro: #FFF7DC;
+  --branco: #FFFFFF;
+  --preto: #000000;
+} */
+
+:root {
+  /* Sua paleta */
+  --vinho-escuro: #6C1529;   /* tom principal */
+  --creme-claro: #FFF7DC;    /* fundo claro */
+  --branco: #FFFFFF;         /* neutro */
+  --preto: #000000;          /* contraste */
+
+  /* Bootstrap overrides */
+  --bs-primary: var(--vinho-escuro) !important;
+  --bs-secondary: var(--creme-claro) !important;
+  --bs-light: var(--branco) !important;
+  --bs-dark: var(--preto) !important;
+
+  --bs-body-bg: var(--creme-claro) !important;
+  --bs-body-color: var(--preto) !important;
+}
