@@ -31,4 +31,6 @@ lenis.on('scroll', (e) => {
 });
 
 // Initialize AOS
-AOS.init();
+AOS.init({
+  once: true, 
+});

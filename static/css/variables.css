@@ -2,7 +2,9 @@
   --vinho-escuro: #6C1529;
   --creme-claro: #FFF7DC;
   --branco: #FFFFFF;
+  --branco-suave: #fdfdfd;
   --preto: #000000;
+  --preto-suave: #2f2f2f;
   --dourado: #E6C766;
 }
 
@@ -18,8 +20,16 @@
   background-color: var(--branco);
 }
 
+.bg-branco-suave {
+  background-color: var(--branco-suave);
+}
+
 .bg-preto {
   background-color: var(--preto);
+}
+
+.bg-preto-suave {
+  background-color: var(--preto-suave);
 }
 
 .bg-dourado {
@@ -40,6 +50,10 @@
 
 .text-preto {
   color: var(--preto);
+}
+
+.text-preto-suave {
+  color: var(--preto-suave);
 }
 
 .text-dourado {

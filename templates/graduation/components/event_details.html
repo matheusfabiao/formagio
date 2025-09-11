@@ -4,11 +4,13 @@
 <section class="py-5 bg-vinho-escuro">
     <div class="container text-center text-white">
         <h2 class="fw-bold display-6">Detalhes do Evento</h2>
+
+        <div class="divider"></div>
     
         <div class="row row-cols-1 row-cols-md-3 g-3 mt-4">
             {% comment %} Data {% endcomment %}
             <div class="col d-flex">
-                <div class="p-4 w-100 border rounded" style="border-color: var(--dourado) !important;">
+                <div class="event-card p-4 w-100 border rounded" style="border-color: var(--dourado) !important;">
                     <i class="bi bi-calendar3 fs-1" style="color: var(--dourado);"></i>
                     <h5 class="mt-3">Data</h5>
                     <p>20 de Outubro de 2025</p>
@@ -16,7 +18,7 @@
             </div>
             {% comment %} Local {% endcomment %}
             <div class="col d-flex">
-                <div class="p-4 w-100 border rounded" style="border-color: var(--dourado) !important;">
+                <div class="event-card p-4 w-100 border rounded" style="border-color: var(--dourado) !important;">
                     <i class="bi bi-geo-alt fs-1" style="color: var(--dourado);"></i>
                     <h5 class="mt-3">Local</h5>
                     <p>Av. Paulista, 1000 - Bela Vista, SP</p>
@@ -24,7 +26,7 @@
             </div>
             {% comment %} Horário {% endcomment %}
             <div class="col d-flex">
-                <div class="p-4 w-100 border rounded" style="border-color: var(--dourado) !important;">
+                <div class="event-card p-4 w-100 border rounded" style="border-color: var(--dourado) !important;">
                     <i class="bi bi-clock fs-1" style="color: var(--dourado);"></i>
                     <h5 class="mt-3">Horário</h5>
                     <p>16h00</p>
