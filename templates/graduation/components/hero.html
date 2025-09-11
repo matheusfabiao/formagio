@@ -1,33 +1,29 @@
 {% load static %}
 
-<section class="hero-section pt-5">
-    <div class="container">
-        <div class="row min-vh-100 align-items-center row-cols-1 row-cols-md-2">
-
-            <div class="col text-center text-md-start text-white">
-                <!-- Hero Content -->
-                <h1 class="display-3 fw-bold mb-1">
-                    Giovanna Urquisa
-                </h1>
-                <h2 class="display-6 mb-4">
-                    Baile de Formatura
-                </h2>
-                <p>
-                    Depois de anos de dedicação, estudos intensos e muitas conquistas, é hora de comemorar essa vitória! Você faz parte dessa trajetória, e por isso, sua presença na comemoração será um presente especial.
-                </p>
-
-                <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 text-capitalize">
-                    <a href="#" class="btn btn-light">
-                        Marque sua presença
-                    </a>
-                    <a href="#" class="btn btn-outline-light">
-                        Saiba mais
-                    </a>
-                </div>
-
-                <img src="{% static 'img/gio_cadeira.jpg' %}" alt="Giovanna Urquisa" class="img-fluid mt-3 d-block d-md-none mx-auto">
+<section class="hero-section container pt-5 pt-md-0">
+    <div class="row row-cols-1 row-cols-md-2 align-items-center">
+        {% comment %} Hero Content {% endcomment %}
+        <div class="col text-center text-md-start">
+            <h1 class="display-4 fw-bold">Giovanna&nbsp;Urquisa</h1>
+            <h3 class="display-5 mb-4">Advogada</h3>
+            <hr>
+            <p class="mb-4">
+                Depois de anos de dedicação, estudos intensos e muitas conquistas, é hora de comemorar essa vitória! Você faz parte dessa trajetória, e por isso, sua presença na comemoração será um presente especial.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3">
+                <a href="#" style="min-width: 150px" class="btn btn-vinho-escuro">
+                    Marcar presença
+                </a>
+                <a href="#" style="min-width: 150px" class="btn btn-vinho-escuro-outline">
+                    Saiba mais
+                </a>
             </div>
-
+        </div>
+        <div class="col">
+            {% comment %} Hero Image Desktop {% endcomment %}
+            <img src="{% static 'img/gio_transparent_ps.png' %}" alt="Giovanna Urquisa" class="hero-img-desktop img-fluid d-none d-sm-block mx-auto drop-shadow">
+            {% comment %} Hero Image Mobile {% endcomment %}
+            <img src="{% static 'img/gio_transparent_smaller.png' %}" alt="Giovanna Urquisa" class="hero-img-mobile img-fluid d-block d-sm-none mx-auto drop-shadow mt-3">
         </div>
     </div>
 </section>

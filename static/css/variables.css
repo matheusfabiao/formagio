@@ -1,23 +1,152 @@
-/* :root {
+:root {
   --vinho-escuro: #6C1529;
   --creme-claro: #FFF7DC;
   --branco: #FFFFFF;
   --preto: #000000;
-} */
+  --dourado: #E6C766;
+}
 
-:root {
-  /* Sua paleta */
-  --vinho-escuro: #6C1529;   /* tom principal */
-  --creme-claro: #FFF7DC;    /* fundo claro */
-  --branco: #FFFFFF;         /* neutro */
-  --preto: #000000;          /* contraste */
+.bg-vinho-escuro {
+  background-color: var(--vinho-escuro);
+}
 
-  /* Bootstrap overrides */
-  --bs-primary: var(--vinho-escuro) !important;
-  --bs-secondary: var(--creme-claro) !important;
-  --bs-light: var(--branco) !important;
-  --bs-dark: var(--preto) !important;
+.bg-creme-claro {
+  background-color: var(--creme-claro);
+}
 
-  --bs-body-bg: var(--creme-claro) !important;
-  --bs-body-color: var(--preto) !important;
+.bg-branco {
+  background-color: var(--branco);
+}
+
+.bg-preto {
+  background-color: var(--preto);
+}
+
+.bg-dourado {
+  background-color: var(--dourado);
+}
+
+.text-vinho-escuro {
+  color: var(--vinho-escuro);
+}
+
+.text-creme-claro {
+  color: var(--creme-claro);
+}
+
+.text-branco {
+  color: var(--branco);
+}
+
+.text-preto {
+  color: var(--preto);
+}
+
+.text-dourado {
+  color: var(--dourado);
+}
+
+.btn-vinho-escuro {
+  background-color: var(--vinho-escuro);
+  color: var(--branco);
+}
+
+.btn-vinho-escuro:hover {
+  background-color: var(--dourado);
+  color: var(--vinho-escuro);
+}
+
+.btn-vinho-escuro-outline {
+  background-color: transparent;
+  color: var(--vinho-escuro);
+  border-color: var(--vinho-escuro);
+}
+
+.btn-vinho-escuro-outline:hover {
+  background-color: var(--vinho-escuro);
+  color: var(--branco);
+}
+
+.btn-creme-claro {
+  background-color: var(--creme-claro);
+  color: var(--vinho-escuro);
+}
+
+.btn-creme-claro:hover {
+  background-color: var(--vinho-escuro);
+  color: var(--creme-claro);
+}
+
+.btn-creme-claro-outline {
+  background-color: var(--vinho-escuro);
+  color: var(--creme-claro);
+  border-color: var(--creme-claro);
+}
+
+.btn-creme-claro-outline:hover {
+  background-color: var(--creme-claro);
+  color: var(--vinho-escuro);
+}
+
+.btn-branco {
+  background-color: var(--branco);
+  color: var(--vinho-escuro);
+}
+
+.btn-branco:hover {
+  background-color: var(--vinho-escuro);
+  color: var(--branco);
+}
+
+.btn-branco-outline {
+  background-color: var(--vinho-escuro);
+  color: var(--branco);
+  border-color: var(--branco);
+}
+
+.btn-branco-outline:hover {
+  background-color: var(--branco);
+  color: var(--vinho-escuro);
+}
+
+.btn-preto {
+  background-color: var(--preto);
+  color: var(--branco);
+}
+
+.btn-preto:hover {
+  background-color: var(--branco);
+  color: var(--preto);
+}
+
+.btn-preto-outline {
+  background-color: var(--branco);
+  color: var(--preto);
+  border-color: var(--preto);
+}
+
+.btn-preto-outline:hover {
+  background-color: var(--preto);
+  color: var(--branco);
+}
+
+.btn-dourado {
+  background-color: var(--dourado);
+  color: var(--preto);
+}
+
+.btn-dourado:hover {
+  background-color: var(--preto);
+  color: var(--dourado);
+}
+
+.btn-dourado-outline {
+  background-color: var(--preto);
+  color: var(--dourado);
+  border-color: var(--dourado);
+}
+
+.btn-dourado-outline:hover {
+  background-color: var(--dourado);
+  color: var(--preto);
 }

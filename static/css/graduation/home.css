@@ -1,4 +1,28 @@
-/* Components */
+/* .hero-img-desktop,
+.hero-img-mobile {
+    -webkit-mask-image: linear-gradient(to bottom, 
+        black 60%, 
+        transparent 100%);
+    mask-image: linear-gradient(to bottom, 
+        black 60%, 
+        transparent 100%);
+} */
 
-/* Hero */
-@import './components/hero.css';
+.hero-img-mobile {
+    max-height: 500px;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.hero-img-desktop {
+    max-height: 700px;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.divider {
+    width: 80px;
+    height: 3px;
+    background: var(--dourado);
+    margin: 1rem auto;
+}
