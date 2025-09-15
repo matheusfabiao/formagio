@@ -1,11 +1,10 @@
-<h1>Confirme sua presença!</h1>
+{% extends "base.html" %}
 
-<form method="POST">
-    {% csrf_token %}
+{% block content %}
+    <section class="py-5">
+        <h1 class="text-center display-4 fw-bold">
+            Confirme sua presença!
+        </h1>
+    </section>
 
-    <table>
-        {{ form.as_table }}
-    </table>
-
-    <input type="submit" value="Confirmar">
-</form>
+{% endblock content %}
