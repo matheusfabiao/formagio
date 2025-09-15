@@ -1,3 +1,7 @@
+.hero-title {
+    color: var(--vinho-escuro);
+}
+
 .hero-img-desktop,
 .hero-img-mobile {
     -webkit-mask-image: linear-gradient(to bottom, 

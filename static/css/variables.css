@@ -77,8 +77,8 @@
 }
 
 .btn-vinho-escuro-outline:hover {
-  background-color: var(--vinho-escuro);
-  color: var(--branco);
+  background-color: var(--dourado);
+  color: var(--vinho-escuro);
 }
 
 .btn-creme-claro {
@@ -150,8 +150,8 @@
 }
 
 .btn-dourado:hover {
-  background-color: var(--preto);
-  color: var(--dourado);
+  background-color: var(--vinho-escuro);
+  color: var(--branco);
 }
 
 .btn-dourado-outline {
