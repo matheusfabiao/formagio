@@ -6,11 +6,11 @@
         <div class="row row-cols-1 row-cols-md-2 align-items-center">
             {% comment %} Form {% endcomment %}
             <div class="col">
-                <h3 class="h2 mb-3 fw-bold text-md-start text-center">Ainda não confirmou sua&nbsp;presença?</h3>
+                <h3 class="h2 mb-3 fw-bold text-md-start text-center" data-aos="fade-right" data-aos-duration="1000">Ainda não confirmou sua&nbsp;presença?</h3>
 
-                <p class="mb-5 text-md-start text-center">Para confirmar sua presença ou de seu acompanhante, preencha o formulário abaixo.</p>
+                <p class="mb-5 text-md-start text-center" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">Para confirmar sua presença ou de seu acompanhante, preencha o formulário abaixo.</p>
 
-                <form method="post" class="mx-auto">
+                <form method="post" class="mx-auto" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
                     {% csrf_token %}
                     {{ form.as_p }}
 
@@ -20,7 +20,7 @@
             </div>
             {% comment %} Image {% endcomment %}
             <div class="col">
-                <img src="{% static 'img/gio_cadeira_diploma.jpg' %}" alt="Giovanna Urquisa" class="gio-form-img img-fluid mx-auto">
+                <img src="{% static 'img/gio_cadeira_diploma.jpg' %}" alt="Giovanna Urquisa" class="gio-form-img img-fluid mx-auto" data-aos="fade-left" data-aos-duration="1000">
             </div>
         </div>
     </div>
