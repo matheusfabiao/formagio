@@ -12,9 +12,7 @@
 
                 <form method="post" class="mx-auto">
                     {% csrf_token %}
-                    <table class="w-100">
-                        {{ form.as_table }}
-                    </table>
+                    {{ form.as_p }}
 
                     <button type="submit" class="btn btn-dourado mt-3 mb-md-0 mb-5">Confirmar presença</button>
 

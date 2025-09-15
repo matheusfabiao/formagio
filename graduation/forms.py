@@ -7,3 +7,6 @@ class GuestForm(forms.ModelForm):
     class Meta:
         model = Guest
         fields = ['name', 'email', 'message']
+        widgets = {
+            'message': forms.Textarea(attrs={'rows': 5}),
+        }
