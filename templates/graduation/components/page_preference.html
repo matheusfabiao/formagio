@@ -1,0 +1,29 @@
+{% load static %}
+
+
+<section class="py-5" style="background-color: black">
+    <div class="container text-white overflow-hidden">
+        <div class="row row-cols-1 row-cols-md-2 align-items-center">
+            {% comment %} Form {% endcomment %}
+            <div class="col">
+                <h3 class="h2 mb-3 fw-bold text-md-start text-center">Ainda não confirmou sua&nbsp;presença?</h3>
+
+                <p class="mb-5 text-md-start text-center">Para confirmar sua presença ou de seu acompanhante, preencha o formulário abaixo.</p>
+
+                <form method="post" class="mx-auto">
+                    {% csrf_token %}
+                    <table class="w-100">
+                        {{ form.as_table }}
+                    </table>
+
+                    <button type="submit" class="btn btn-dourado mt-3 mb-md-0 mb-5">Confirmar presença</button>
+
+                </form>
+            </div>
+            {% comment %} Image {% endcomment %}
+            <div class="col">
+                <img src="{% static 'img/gio_cadeira_diploma.jpg' %}" alt="Giovanna Urquisa" class="gio-form-img img-fluid mx-auto">
+            </div>
+        </div>
+    </div>
+</section>
