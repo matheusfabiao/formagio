@@ -5,7 +5,7 @@
     <div class="container text-white overflow-hidden">
         <div class="row row-cols-1 row-cols-md-2 align-items-center">
             {% comment %} Form {% endcomment %}
-            <div class="col">
+            <div class="col py-5" id="form">
                 <h3 class="h2 mb-3 fw-bold text-md-start text-center" data-aos="fade-right" data-aos-duration="1000">Ainda não confirmou sua&nbsp;presença?</h3>
 
                 <p class="mb-5 text-md-start text-center" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">Para confirmar sua presença ou de seu acompanhante, preencha o formulário abaixo.</p>
@@ -14,7 +14,7 @@
                     {% csrf_token %}
                     {{ form.as_p }}
 
-                    <button type="submit" class="btn btn-dourado mt-3 mb-md-0 mb-5">Confirmar presença</button>
+                    <button type="submit" class="btn btn-dourado mt-3">Confirmar presença</button>
 
                 </form>
             </div>
