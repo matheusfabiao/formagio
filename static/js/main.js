@@ -34,3 +34,54 @@ lenis.on('scroll', (e) => {
 AOS.init({
   once: true, 
 });
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"], a[href*="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        
+        // Check if it's a link to an anchor on the current page
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                lenis.scrollTo(targetElement);
+            }
+        } else {
+            // It's a link to another page with an anchor
+            const urlParts = href.split('#');
+            const pageUrl = urlParts[0];
+            const targetId = urlParts[1];
+
+            // If the link is to the current page, just scroll
+            if (pageUrl === window.location.pathname || pageUrl === '') {
+                e.preventDefault();
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    lenis.scrollTo(targetElement);
+                }
+            }
+            // If it's a link to another page, let the browser handle it,
+            // but we can store the targetId to scroll after page load.
+            else {
+                sessionStorage.setItem('scrollTo', '#' + targetId);
+            }
+        }
+    });
+});
+
+// On page load, check if we need to scroll to a section
+window.addEventListener('load', () => {
+    const scrollTo = sessionStorage.getItem('scrollTo');
+    if (scrollTo) {
+        sessionStorage.removeItem('scrollTo');
+        const targetElement = document.querySelector(scrollTo);
+        if (targetElement) {
+            setTimeout(() => {
+                lenis.scrollTo(targetElement);
+            }, 100); // A small delay to ensure the page is fully rendered
+        }
+    }
+});
