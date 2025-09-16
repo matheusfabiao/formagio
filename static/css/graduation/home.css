@@ -142,3 +142,12 @@ input, textarea {
         width: 100%;
     }
 }
+
+.guest-grid .card {
+    transition: 0.3s ease;
+}
+
+.guest-grid .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
