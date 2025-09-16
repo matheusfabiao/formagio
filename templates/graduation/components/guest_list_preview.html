@@ -10,8 +10,11 @@
             {% for guest in guests %}
                 <div class="col guest-grid" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <div class="card h-100">
-                        {% comment %} TODO: Adicionar imagem de fallback no backend {% endcomment %}
-                        <img src="{% if guest.image %}{{ guest.image.url }}{% else %}{% static 'img/gio_transparent_smaller.png' %}{% endif %}" alt="Foto de {{ guest.name }}" class="card-img-top" style="object-fit: cover; object-position: top center; height: 400px;">
+                        {% if guest.picture %}
+                            <img src="{{ guest.picture.url }}" alt="Foto de {{ guest.name }}" class="card-img-top" style="height: 400px; object-fit: cover; object-position: top center;">
+                        {% else %}
+                            <img src="{% static 'img/gio_transparent_smaller.png' %}" class="card-img-top" alt="Giovanna Urquisa" style="height: 400px; object-fit: cover; object-position: top center;">
+                        {% endif %}
                         <div class="card-body">
                             <h5 class="fw-bold card-title h4">{{ guest.name }}</h5>
                             <p class="card-text">{% if guest.message %}"{{ guest.message | truncatechars:100 }}"{% else %}Confirmado(a).{% endif %}</p>

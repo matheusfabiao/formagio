@@ -18,6 +18,13 @@ class Guest(models.Model):
         null=True,
     )
 
+    picture = models.ImageField(
+        verbose_name='Foto',
+        upload_to='guests/',
+        blank=True,
+        null=True,
+    )
+
     created_at = models.DateTimeField(
         verbose_name='Data de confirmação',
         auto_now_add=True,

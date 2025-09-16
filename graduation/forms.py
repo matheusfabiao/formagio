@@ -6,7 +6,7 @@ from .models import Guest
 class GuestForm(forms.ModelForm):
     class Meta:
         model = Guest
-        fields = ['name', 'email', 'message']
+        fields = ['picture', 'name', 'email', 'message']
         widgets = {
             'message': forms.Textarea(attrs={'rows': 5}),
         }
