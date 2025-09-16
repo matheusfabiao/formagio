@@ -13,4 +13,12 @@
     {% include "graduation/components/form_component.html" %}
     {% comment %} Guest List Preview {% endcomment %}
     {% include "graduation/components/guest_list_preview.html" %}
+    {% comment %} Continuação da Seção de Guest List Preview {% endcomment %}
+    <p class="text-center lead">Você pode ver a <span class="fw-bold text-dourado">lista de convidados</span> completa aqui:</p>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+        <a href="{% url 'guest_list' %}" class="btn btn-vinho-escuro">
+            Lista de convidados
+        </a>
+    </div>
 {% endblock content %}

@@ -1,17 +1,19 @@
-<h1>Lista de convidados confirmados</h1>
+{% extends "base.html" %}
 
-<form method="GET" action="{% url 'guest_list' %}">
-    <input type="text" name="search" placeholder="Buscar convidado...">
-    <button type="submit">Buscar</button>
-</form>
+{% load static %}
 
-{% if guests %}
-    <ul>
-        {% for guest in guests %}
-            <li>{{ guest.name }} - {{ guest.email }}</li>
-        {% endfor %}
-    </ul>
+{% block title %}Convidados{% endblock title %}
 
-{% else %}
-    <p>Não há convidados confirmados.</p>
-{% endif %}
+{% block content %}
+    {% include 'graduation/components/guest_list_preview.html' %}
+    {% comment %} Continuação da Seção de Guest List Preview {% endcomment %}
+    <p class="text-center h2 fw-bold mt-3">Ainda não fez <span class="fw-bold text-dourado">sua inscrição?</span></p>
+
+    <p class="text-center lead">Acesse o formulário da página principal:</p>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+        <a href="{% url 'home' %}" class="btn btn-vinho-escuro">
+            Faça sua inscrição
+        </a>
+    </div>
+{% endblock content %}

@@ -93,11 +93,11 @@
 /* Ajustes para dispositivos móveis */
 @media (max-width: 767px) {
     .timeline::before {
-        left: 1.5rem;
+        display: none;
     }
     
     .timeline-dot {
-        left: 1.5rem;
+        display: none;
     }
 }
 
