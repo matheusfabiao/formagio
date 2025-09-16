@@ -18,13 +18,13 @@
                     <a href="{% url 'home' %}" class="nav-link {% if request.path == '/' %}active{% endif %}">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'home' %}#about" class="nav-link">Sobre</a>
+                    <a href="{% if request.path == '/' %}#about{% else %}{% url 'home' %}#about{% endif %}" class="nav-link">Sobre</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'home' %}#event" class="nav-link">Evento</a>
+                    <a href="{% if request.path == '/' %}#event{% else %}{% url 'home' %}#event{% endif %}" class="nav-link">Evento</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'home' %}#form" class="nav-link">Presença</a>
+                    <a href="{% if request.path == '/' %}#form{% else %}{% url 'home' %}#form{% endif %}" class="nav-link">Presença</a>
                 </li>
                 {% comment %} <li class="nav-item">
                     <a href="#galery" class="nav-link">Galeria</a>
