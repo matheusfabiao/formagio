@@ -39,32 +39,33 @@ AOS.init({
 document.querySelectorAll('a[href^="#"], a[href*="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
-        
-        // Check if it's a link to an anchor on the current page
+        const headerOffset = document.querySelector('header').offsetHeight || 100; // Fallback para 100px
+
+        // Verifica se é um link para uma âncora na página atual
         if (href.startsWith('#')) {
             e.preventDefault();
             const targetId = href.substring(1);
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
-                lenis.scrollTo(targetElement);
+                lenis.scrollTo(targetElement, { offset: -headerOffset });
             }
         } else {
-            // It's a link to another page with an anchor
+            // É um link para outra página com uma âncora
             const urlParts = href.split('#');
             const pageUrl = urlParts[0];
             const targetId = urlParts[1];
 
-            // If the link is to the current page, just scroll
+            // Se o link for para a página atual, apenas role
             if (pageUrl === window.location.pathname || pageUrl === '') {
                 e.preventDefault();
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
-                    lenis.scrollTo(targetElement);
+                    lenis.scrollTo(targetElement, { offset: -headerOffset });
                 }
             }
-            // If it's a link to another page, let the browser handle it,
-            // but we can store the targetId to scroll after page load.
+            // Se for um link para outra página, deixe o navegador lidar com isso,
+            // mas podemos armazenar o targetId para rolar após o carregamento da página.
             else {
                 sessionStorage.setItem('scrollTo', '#' + targetId);
             }
@@ -79,9 +80,10 @@ window.addEventListener('load', () => {
         sessionStorage.removeItem('scrollTo');
         const targetElement = document.querySelector(scrollTo);
         if (targetElement) {
+            const headerOffset = document.querySelector('header').offsetHeight || 100;
             setTimeout(() => {
-                lenis.scrollTo(targetElement);
-            }, 100); // A small delay to ensure the page is fully rendered
+                lenis.scrollTo(targetElement, { offset: -headerOffset });
+            }, 100); // Um pequeno atraso para garantir que a página esteja totalmente renderizada
         }
     }
 });
