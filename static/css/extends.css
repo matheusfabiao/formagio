@@ -4,6 +4,9 @@
 /* Globals */
 @import './globals.css';
 
+/* Components */
+@import './graduation/components.css';
+
 /* Pages */
 
 /* Home */
