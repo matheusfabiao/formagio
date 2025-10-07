@@ -10,6 +10,16 @@
 
                 <p class="mb-5 text-md-start text-center" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">Para confirmar sua presença ou de seu acompanhante, preencha o formulário abaixo.</p>
 
+                {% if form.errors %}
+                    <div class="alert alert-danger" role="alert" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <strong>{{ field.label }}:</strong> {{ error }}<br>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
                 <form method="post" class="mx-auto" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
                     {% csrf_token %}
                     {{ form.as_p }}

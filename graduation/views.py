@@ -16,6 +16,8 @@ class HomeView(FormView):
         return context
 
     def form_valid(self, form):
+        if form.errors:
+            return super().form_invalid(form)
         form.save()
         return super().form_valid(form)
 
