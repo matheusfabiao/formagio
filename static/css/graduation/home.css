@@ -111,6 +111,11 @@
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
+.event-card .calendar-btn:hover {
+    background-color: var(--creme-claro);
+    color: var(--preto);
+}
+
 form p {
     margin-bottom: 15px;
 }
