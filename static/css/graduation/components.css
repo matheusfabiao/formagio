@@ -6,3 +6,21 @@
 .navbar-nav .nav-link:hover {
     color: var(--dourado) !important;
 }
+
+/* Footer */
+i.bi {
+    transition: 0.3s ease;
+}
+
+i.bi:hover {
+    color: var(--dourado);
+}
+
+.dev-link {
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.dev-link:hover {
+    color: var(--dourado);
+}

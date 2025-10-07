@@ -2,16 +2,6 @@
     color: var(--vinho-escuro);
 }
 
-.hero-img-desktop,
-.hero-img-mobile {
-    -webkit-mask-image: linear-gradient(to bottom, 
-        black 80%, 
-        transparent 100%);
-    mask-image: linear-gradient(to bottom, 
-        black 80%, 
-        transparent 100%);
-}
-
 .hero-img-mobile {
     max-height: 500px;
     object-fit: cover;
@@ -27,8 +17,8 @@
 .about-section {
     background: linear-gradient(
         125deg, 
-        var(--branco) 48.5%, 
-        var(--creme-claro) 51.5%
+        transparent 48.5%, 
+        rgba(255, 247, 220, 0.5) 51.5%
     );
 }
 
@@ -102,8 +92,30 @@
     }
 }
 
+#event {
+    position: relative;
+    background-color: var(--vinho-escuro);
+}
+
+#event::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../img/PATTERN_GIO_OFICIAL_A4.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.05; /* Ajuste a opacidade aqui */
+    z-index: 0;
+}
+
 .event-card {
     transition: 0.3s ease;
+    background-color: var(--vinho-escuro);
 }
 
 .event-card:hover {

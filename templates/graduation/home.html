@@ -5,18 +5,20 @@
 {% block content %}
     {% comment %} Hero Section {% endcomment %}
     {% include "graduation/components/hero.html" %}
-    {% comment %} About Section {% endcomment %}
-    {% include "graduation/components/about.html" %}
     {% comment %} Event Details {% endcomment %}
     {% include "graduation/components/event_details.html" %}
+    {% comment %} About Section {% endcomment %}
+    {% include "graduation/components/about.html" %}
     {% comment %} User Preference Cards {% endcomment %}
     {% include "graduation/components/form_component.html" %}
     {% comment %} Guest List Preview {% endcomment %}
     {% include "graduation/components/guest_list_preview.html" %}
     {% comment %} Continuação da Seção de Guest List Preview {% endcomment %}
-    <p class="text-center lead">Você pode ver a <span class="fw-bold text-dourado">lista de convidados</span> completa aqui:</p>
+    <p class="text-center lead" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        Você pode ver a <span class="fw-bold text-dourado">lista de convidados</span> completa aqui:
+    </p>
 
-    <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+    <div class="d-flex flex-wrap justify-content-center gap-3 pb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
         <a href="{% url 'guest_list' %}" class="btn btn-vinho-escuro">
             Lista de convidados
         </a>
