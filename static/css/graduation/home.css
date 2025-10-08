@@ -90,6 +90,10 @@
     .timeline-dot {
         display: none;
     }
+
+    .timeline-img {
+        height: 350px;
+    }
 }
 
 #event {
@@ -109,7 +113,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    opacity: 0.05; /* Ajuste a opacidade aqui */
+    opacity: 0.05;
     z-index: 0;
 }
 
@@ -168,4 +172,21 @@ input, textarea {
 .guest-grid .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.gio-form-img {
+    mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  ), linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+  mask-composite: intersect;
 }

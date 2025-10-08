@@ -7,13 +7,16 @@
 {% block content %}
     {% include 'graduation/components/guest_list_preview.html' %}
     {% comment %} Continuação da Seção de Guest List Preview {% endcomment %}
-    <p class="text-center h2 fw-bold mt-3">Ainda não fez <span class="fw-bold text-dourado">sua inscrição?</span></p>
 
-    <p class="text-center lead">Acesse o formulário da página principal:</p>
-
-    <div class="d-flex flex-wrap justify-content-center gap-3 mb-5 container">
-        <a href="{% url 'home' %}" class="btn btn-vinho-escuro">
-            Faça sua inscrição
-        </a>
+    <div class="container py-5">
+        <p class="text-center h1 fw-bold">Ainda não fez <span class="fw-bold text-dourado">sua inscrição?</span></p>
+    
+        <p class="text-center lead">Acesse o formulário da página principal:</p>
+    
+        <div class="d-flex flex-wrap justify-content-center gap-3 mb-5 container">
+            <a href="{% url 'home' %}" class="btn btn-vinho-escuro fs-5 btn-lg">
+                Faça sua inscrição
+            </a>
+        </div>
     </div>
 {% endblock content %}

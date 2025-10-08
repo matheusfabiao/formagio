@@ -13,7 +13,7 @@
                         {% if guest.picture %}
                             <img src="{{ guest.picture.url }}" alt="Foto de {{ guest.name }}" class="card-img-top" style="height: 400px; object-fit: cover; object-position: top center;">
                         {% else %}
-                            <img src="{% static 'img/gio_transparent_smaller.png' %}" class="card-img-top" alt="Giovanna Urquisa" style="height: 400px; object-fit: cover; object-position: top center;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" class="card-img-top" alt="Giovanna Urquisa" style="height: 400px; object-fit: cover; object-position: top center;">
                         {% endif %}
                         <div class="card-body">
                             <h5 class="fw-bold card-title h4">{{ guest.name }}</h5>
