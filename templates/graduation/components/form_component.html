@@ -20,7 +20,7 @@
                     </div>
                 {% endif %}
 
-                <form method="post" class="mx-auto" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
+                <form method="post" enctype="multipart/form-data" class="mx-auto" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
                     {% csrf_token %}
                     {{ form.as_p }}
 

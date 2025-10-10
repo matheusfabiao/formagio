@@ -1,5 +1,6 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from django.views.generic.edit import FormView
+from django.urls import reverse_lazy
 
 from .forms import GuestForm
 from .models import Guest
@@ -8,7 +9,7 @@ from .models import Guest
 class HomeView(FormView):
     template_name = 'graduation/home.html'
     form_class = GuestForm
-    success_url = '/'
+    success_url = reverse_lazy('thank_you')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -36,3 +37,7 @@ class GuestListView(ListView):
             guests = Guest.objects.all()
 
         return guests
+
+
+class ThankYouView(TemplateView):
+    template_name = 'graduation/thank_you.html'
