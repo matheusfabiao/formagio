@@ -154,6 +154,17 @@
   color: var(--branco);
 }
 
+.btn-dourado-alt {
+  background-color: var(--dourado);
+  color: var(--preto);
+  transition: 0.3s ease !important;
+}
+
+.btn-dourado-alt:hover {
+  background-color: var(--branco);
+  color: var(--preto);
+}
+
 .btn-dourado-outline {
   background-color: var(--preto);
   color: var(--dourado);

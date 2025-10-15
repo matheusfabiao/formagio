@@ -54,5 +54,43 @@
             loading="lazy"
             data-aos="fade-up" data-aos-duration="1000">
         </iframe>
+
+        {% comment %} Separador {% endcomment %}
+        <div class="divider mt-5 mb-4" data-aos="fade-up" data-aos-duration="1000"></div>
+
+        {% comment %} Jantar Comemorativo aprimorado {% endcomment %}
+        <div class="mx-auto mt-5 p-5 rounded-4 position-relative overflow-hidden"
+            style="
+                max-width: 900px;
+                background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(162,128,90,0.15) 100%);
+                border: 1px solid var(--dourado);
+                box-shadow: 0 0 25px rgba(162,128,90,0.2);
+                transition: all 0.4s ease;
+            "
+            data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"
+            onmouseover="this.style.boxShadow='0 0 40px rgba(162,128,90,0.4)';"
+            onmouseout="this.style.boxShadow='0 0 25px rgba(162,128,90,0.2)';">
+
+            <div class="d-flex flex-column align-items-center text-center">
+                <!-- Texto e botão -->
+                <div>
+                    <h3 class="fs-1 fw-bold text-white mb-3">Jantar Comemorativo</h3>
+                    <p class="text-light fs-5 mb-4">
+                        Após a missa, vamos celebrar juntos no <strong class="text-dourado">Picanha do Bastos Gold</strong> ✨
+                        <br>
+                        Será uma noite especial para encerrar esse momento marcante.
+                        <br>
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Picanha+do+Bastos+Gold" 
+                    target="_blank" rel="noopener noreferrer"
+                    class="btn btn-dourado-alt px-4 py-2 fw-semibold"
+                    onmouseover="this.style.transform='scale(1.05)';"
+                    onmouseout="this.style.transform='scale(1)';">
+                        Ver Local do Jantar
+                    </a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>

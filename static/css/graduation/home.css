@@ -57,6 +57,12 @@
     object-position: center center;
 }
 
+@media (max-width: 1400px) {
+    #oab .timeline-img {
+        object-fit: contain;
+    }
+}
+
 .timeline-date {
     background-color: var(--vinho-escuro);
     color: var(--branco);

@@ -1,6 +1,6 @@
+from django.urls import reverse_lazy
 from django.views.generic import ListView, TemplateView
 from django.views.generic.edit import FormView
-from django.urls import reverse_lazy
 
 from .forms import GuestForm
 from .models import Guest
