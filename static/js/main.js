@@ -87,3 +87,31 @@ window.addEventListener('load', () => {
         }
     }
 });
+
+// Read More Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const guestGrids = document.querySelectorAll('.guest-grid');
+
+    guestGrids.forEach(grid => {
+        grid.addEventListener('click', function(e) {
+            if (e.target.classList.contains('read-more')) {
+                e.preventDefault();
+                const card = e.target.closest('.card');
+                const shortMessage = card.querySelector('.short-message');
+                const fullMessage = card.querySelector('.full-message');
+
+                if (card.classList.contains('expanded')) {
+                    card.classList.remove('expanded');
+                    e.target.textContent = 'Leia Mais';
+                    fullMessage.style.display = 'none';
+                    shortMessage.style.display = 'block';
+                } else {
+                    card.classList.add('expanded');
+                    e.target.textContent = 'Leia Menos';
+                    shortMessage.style.display = 'none';
+                    fullMessage.style.display = 'block';
+                }
+            }
+        });
+    });
+});

@@ -17,7 +17,13 @@
                         {% endif %}
                         <div class="card-body">
                             <h5 class="fw-bold card-title h4">{{ guest.name }}</h5>
-                            <p class="card-text">{% if guest.message %}"{{ guest.message | truncatechars:100 }}"{% else %}Confirmado(a).{% endif %}</p>
+                            <div class="message-container">
+                                <p class="card-text short-message">{% if guest.message %}"{{ guest.message | truncatewords:15 }}"{% else %}Confirmado(a).{% endif %}</p>
+                                <p class="card-text full-message" style="display: none;">{% if guest.message %}"{{ guest.message }}"{% else %}Confirmado(a).{% endif %}</p>
+                                {% if guest.message and guest.message|wordcount > 15 %}
+                                    <a href="#" class="read-more">Leia Mais</a>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                 </div>

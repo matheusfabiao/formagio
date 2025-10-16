@@ -24,3 +24,37 @@ i.bi:hover {
 .dev-link:hover {
     color: var(--dourado);
 }
+/* Guest List Preview */
+.guest-grid .card {
+    transition: all 0.3s ease-in-out;
+}
+
+.guest-grid .card.expanded {
+    height: 100%;
+}
+
+.message-container .full-message {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.guest-grid .card.expanded .short-message {
+    display: none;
+}
+
+.guest-grid .card.expanded .full-message {
+    display: block;
+    opacity: 1;
+}
+
+.read-more {
+    color: var(--vinho-escuro);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--dourado);
+}
