@@ -1,0 +1,181 @@
+{% extends "base_prom.html" %}
+
+{% load static %}
+
+{% block title %}Baile de Formatura{% endblock title %}
+
+{% block css %}
+
+<style>
+    .hero {
+        background-image: none;
+        background-color: black;
+    }
+
+    .event  {
+        position: relative;
+        background-color: var(--vinho-escuro);
+    }
+
+    .event::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../static/img/PATTERN_GIO_OFICIAL_A4.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 0.05;
+        z-index: 0;
+    }
+
+    @media (min-width: 768px) {
+        .hero {
+            background-image: url('{% static "img/gio_cadeira.jpg" %}');
+            background-size: cover;
+            background-position: center center;
+            background-blend-mode: color;
+            background-color: rgba(0, 0, 0, .5);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+    }
+</style>
+
+{% endblock css %}
+
+{% block content %}
+
+<section class="hero pt-5">
+    <div class="container">
+        <div class="row min-vh-100 align-items-center row-cols-1 row-cols-md-2">
+            <div class="col text-center text-md-start text-white">
+                <!-- Hero Content -->
+                <h1 class="display-3 fw-bold mb-1">
+                    Giovanna Urquisa
+                </h1>
+                <h2 class="display-6 mb-4">
+                    Baile de Formatura
+                </h2>
+                <p>
+                    Depois de anos de dedicação, estudos intensos e muitas conquistas, é hora de comemorar essa vitória! Você faz parte dessa trajetória, e por isso, sua presença na comemoração será um presente especial.
+                </p>
+                <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 text-capitalize">
+                    <a href="#" class="btn btn-light">
+                        Marque sua presença
+                    </a>
+                    <a href="#" class="btn btn-outline-light">
+                        Saiba mais
+                    </a>
+                </div>
+                <img src="{% static 'img/gio_cadeira.jpg' %}" alt="Giovanna Urquisa" class="img-fluid mt-3 d-block d-md-none mx-auto">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="event py-5">
+    <div class="container text-center text-white">
+        <h2 class="fw-bold display-6" data-aos="fade-up" data-aos-duration="1000">Detalhes do Evento</h2>
+
+        <div class="divider" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"></div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-3 mt-4">
+            {% comment %} Data {% endcomment %}
+            <div class="col d-flex" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                <div class="event-card p-4 w-100 border rounded" style="border-color: var(--dourado) !important;">
+                    <i class="bi bi-calendar3 fs-1" style="color: var(--dourado);"></i>
+                    <h5 class="mt-3">Data</h5>
+                    <p>05 de Dezembro de 2025</p>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Baile+de+formatura+de+Giovanna+Urquisa&details=Noite+especial+para+celebrar+a+formatura+com+familiares+e+amigos.&location=Passo+dos+Le%C3%B5es&dates=20251206T010000Z/20251206T080000Z" target="_blank" rel="noopener noreferrer" class="calendar-btn btn btn-dourado mt-3">
+                        Adicionar ao calendário
+                    </a>
+                </div>
+            </div>
+            {% comment %} Local {% endcomment %}
+            <div class="col d-flex" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                <div class="event-card p-4 w-100 border rounded" style="border-color: var(--dourado) !important;">
+                    <i class="bi bi-geo-alt fs-1" style="color: var(--dourado);"></i>
+                    <h5 class="mt-3">Local</h5>
+                    <p>Passo dos Leões</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Passo+dos+Le%C3%B5es" target="_blank" rel="noopener noreferrer"  class="calendar-btn btn btn-dourado mt-3">
+                        Abrir no Google Maps
+                    </a>
+                </div>
+            </div>
+            {% comment %} Horário {% endcomment %}
+            <div class="col d-flex" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
+                <div class="event-card p-4 w-100 border rounded" style="border-color: var(--dourado) !important;">
+                    <i class="bi bi-clock fs-1" style="color: var(--dourado);"></i>
+                    <h5 class="mt-3">Horário</h5>
+                    <p>22h00</p>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Baile+de+formatura+de+Giovanna+Urquisa&details=Noite+especial+para+celebrar+a+formatura+com+familiares+e+amigos.&location=Passo+dos+Le%C3%B5es&dates=20251206T010000Z/20251206T080000Z" target="_blank" rel="noopener noreferrer" class="calendar-btn btn btn-dourado mt-3">
+                        Adicionar ao calendário
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {% comment %} Google Maps {% endcomment %}
+        <iframe
+            src="https://www.google.com/maps?q=Avenida+Jo%C3%A3o+Cirilo+da+Silva,+1100+-+Altiplano+Cabo+Branco,+Jo%C3%A3o+Pessoa+-+PB,+58046-005&output=embed"
+            class="w-100 rounded mt-5 border"
+            height="450"
+            style="border-color: var(--dourado) !important;"
+            allowfullscreen=""
+            referrerpolicy="no-referrer-when-downgrade"
+            loading="lazy"
+            data-aos="fade-up"
+            data-aos-duration="1000">
+        </iframe>
+
+        {% comment %} Separador {% endcomment %}
+        <div class="divider mt-5 mb-4" data-aos="fade-up" data-aos-duration="1000"></div>
+
+        {% comment %} Jantar Comemorativo aprimorado {% endcomment %}
+        <div class="mx-auto mt-5 p-5 rounded-4 position-relative overflow-hidden"
+            style="
+                max-width: 900px;
+                background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(162,128,90,0.15) 100%);
+                border: 1px solid var(--dourado);
+                box-shadow: 0 0 25px rgba(162,128,90,0.2);
+                transition: all 0.4s ease;
+            "
+            data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"
+            onmouseover="this.style.boxShadow='0 0 40px rgba(162,128,90,0.4)';"
+            onmouseout="this.style.boxShadow='0 0 25px rgba(162,128,90,0.2)';">
+
+            <div class="d-flex flex-column align-items-center text-center">
+                <!-- Texto e botão -->
+                <div>
+                    <h3 class="fs-1 fw-bold text-white mb-3">Finalmente, festa?</h3>
+                    <p class="text-light fs-5 mb-4">
+                        Venha preparado para curtir e dançar muito comigo para fecharmos com chave de ouro esse ciclo tão especial.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Passo+dos+Le%C3%B5es" 
+                    target="_blank" rel="noopener noreferrer"
+                    class="btn btn-dourado-alt px-4 py-2 fw-semibold"
+                    onmouseover="this.style.transform='scale(1.05)';"
+                    onmouseout="this.style.transform='scale(1)';">
+                        Ver Local da Festa
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+{% comment %} Formulário de confirmação {% endcomment %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Confirmar</button>
+</form>
+
+{% endblock content %}

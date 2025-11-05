@@ -1,0 +1,283 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site para formatura da Giovanna Urquisa">
+    <meta name="author" content="Matheus Fabião">
+    <meta name="keywords" content="Advogada, Giovanna Urquisa, Formatura, Graduação, OAB, Direito">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:title" content="Giovanna Urquisa | Formatura">
+    <meta property="og:description" content="Convite especial para a formatura de Giovanna Urquisa.">
+    <meta property="og:image" content="https://giovannaurquisa.pythonanywhere.com/static/img/logo-giovanna-sem-nome.webp">
+    <meta property="og:url" content="https://giovannaurquisa.pythonanywhere.com/">
+    <meta property="og:type" content="website">
+    <title>
+        Giovanna Urquisa | {% block title %}{% endblock title %}
+    </title>
+    {% comment %} Bootstrap CSS {% endcomment %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    {% comment %} Font Awesome {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% comment %} Lenis Smooth Scroll CSS {% endcomment %}
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.8/dist/lenis.css">
+    {% comment %} AOS CSS {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% comment %} Bootstrap Icons {% endcomment %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    {% comment %} Custom CSS {% endcomment %}
+    <style>
+        :root {
+        --vinho-escuro: #6C1529;
+        --creme-claro: #FFF7DC;
+        --branco: #FFFFFF;
+        --branco-suave: #fdfdfd;
+        --preto: #000000;
+        --preto-suave: #2f2f2f;
+        --dourado: #E6C766;
+        }
+
+        .bg-vinho-escuro {
+        background-color: var(--vinho-escuro);
+        }
+
+        .bg-creme-claro {
+        background-color: var(--creme-claro);
+        }
+
+        .bg-branco {
+        background-color: var(--branco);
+        }
+
+        .bg-branco-suave {
+        background-color: var(--branco-suave);
+        }
+
+        .bg-preto {
+        background-color: var(--preto);
+        }
+
+        .bg-preto-suave {
+        background-color: var(--preto-suave);
+        }
+
+        .bg-dourado {
+        background-color: var(--dourado);
+        }
+
+        .text-vinho-escuro {
+        color: var(--vinho-escuro);
+        }
+
+        .text-creme-claro {
+        color: var(--creme-claro);
+        }
+
+        .text-branco {
+        color: var(--branco);
+        }
+
+        .text-preto {
+        color: var(--preto);
+        }
+
+        .text-preto-suave {
+        color: var(--preto-suave);
+        }
+
+        .text-dourado {
+        color: var(--dourado);
+        }
+
+        .btn-vinho-escuro {
+        background-color: var(--vinho-escuro);
+        color: var(--branco);
+        }
+
+        .btn-vinho-escuro:hover {
+        background-color: var(--dourado);
+        color: var(--vinho-escuro);
+        }
+
+        .btn-vinho-escuro-outline {
+        background-color: transparent;
+        color: var(--vinho-escuro);
+        border-color: var(--vinho-escuro);
+        }
+
+        .btn-vinho-escuro-outline:hover {
+        background-color: var(--dourado);
+        color: var(--vinho-escuro);
+        }
+
+        .btn-creme-claro {
+        background-color: var(--creme-claro);
+        color: var(--vinho-escuro);
+        }
+
+        .btn-creme-claro:hover {
+        background-color: var(--vinho-escuro);
+        color: var(--creme-claro);
+        }
+
+        .btn-creme-claro-outline {
+        background-color: var(--vinho-escuro);
+        color: var(--creme-claro);
+        border-color: var(--creme-claro);
+        }
+
+        .btn-creme-claro-outline:hover {
+        background-color: var(--creme-claro);
+        color: var(--vinho-escuro);
+        }
+
+        .btn-branco {
+        background-color: var(--branco);
+        color: var(--vinho-escuro);
+        }
+
+        .btn-branco:hover {
+        background-color: var(--vinho-escuro);
+        color: var(--branco);
+        }
+
+        .btn-branco-outline {
+        background-color: var(--vinho-escuro);
+        color: var(--branco);
+        border-color: var(--branco);
+        }
+
+        .btn-branco-outline:hover {
+        background-color: var(--branco);
+        color: var(--vinho-escuro);
+        }
+
+        .btn-preto {
+        background-color: var(--preto);
+        color: var(--branco);
+        }
+
+        .btn-preto:hover {
+        background-color: var(--branco);
+        color: var(--preto);
+        }
+
+        .btn-preto-outline {
+        background-color: var(--branco);
+        color: var(--preto);
+        border-color: var(--preto);
+        }
+
+        .btn-preto-outline:hover {
+        background-color: var(--preto);
+        color: var(--branco);
+        }
+
+        .btn-dourado {
+        background-color: var(--dourado);
+        color: var(--preto);
+        }
+
+        .btn-dourado:hover {
+        background-color: var(--vinho-escuro);
+        color: var(--branco);
+        }
+
+        .btn-dourado-alt {
+        background-color: var(--dourado);
+        color: var(--preto);
+        transition: 0.3s ease !important;
+        }
+
+        .btn-dourado-alt:hover {
+        background-color: var(--branco);
+        color: var(--preto);
+        }
+
+        .btn-dourado-outline {
+        background-color: var(--preto);
+        color: var(--dourado);
+        border-color: var(--dourado);
+        }
+
+        .btn-dourado-outline:hover {
+        background-color: var(--dourado);
+        color: var(--preto);
+        }
+
+    </style>
+    {% block css %}{% endblock css %}
+    {% comment %} Favicon {% endcomment %}
+    <link rel="icon" href="{% static 'img/Logo Gio Sem o Nome.svg' %}">
+</head>
+<body class="bg-branco">
+    <header class="fixed-top box-shadow-bottom z-3">
+        <nav class="navbar navbar-expand-md navbar-dark" style="background-color: var(--vinho-escuro);">
+
+            <div class="container">
+
+                <a href="#" class="navbar-brand">
+                    <img src="{% static 'img/Logo Gio Horizontal Branca.svg' %}" alt="Logo Giovanna Urquisa" style="height: 50px;">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-principal">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse text-center justify-content-end" id="nav-principal">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Evento</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Presença</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Convidados</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
+
+    <footer>
+        {% include "graduation/components/footer.html" %}
+    </footer>
+
+    {% comment %} Bootstrap JS {% endcomment %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    {% comment %} Lenis Smooth Scroll JS {% endcomment %}
+    <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
+    {% comment %} AOS JS {% endcomment %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {% comment %} Init AOS {% endcomment %}
+    <script>
+        AOS.init();
+    </script>
+    {% comment %} Custom JS {% endcomment %}
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('myNavbar');
+            if (window.scrollY > 0) { // Check if scrolled more than 0px
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+    {% block js %}{% endblock js %}
+</body>
+</html>

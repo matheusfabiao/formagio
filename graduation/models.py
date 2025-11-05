@@ -7,10 +7,7 @@ class Guest(models.Model):
         max_length=100,
     )
 
-    email = models.EmailField(
-        verbose_name='Email',
-        unique=True,
-    )
+    email = models.EmailField(verbose_name='Email', unique=True, blank=True, null=True)
 
     message = models.TextField(
         verbose_name='Mensagem',
