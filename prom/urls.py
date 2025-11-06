@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import PromHomeView, PromSuccessView, PromGuestsView
+from .views import PromGuestsView, PromHomeView, PromSuccessView
 
 urlpatterns = [
     path('', PromHomeView.as_view(), name='prom_home'),

@@ -33,7 +33,9 @@ class PromGuestsView(ListView):
     context_object_name = 'guests'
 
     def get_queryset(self):
-        return PromGuest.objects.filter(confirmed_presence=True).order_by('first_name', 'last_name')
+        return PromGuest.objects.filter(confirmed_presence=True).order_by(
+            'first_name', 'last_name'
+        )
 
 
 class PromSuccessView(TemplateView):

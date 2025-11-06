@@ -8,7 +8,7 @@ class PromGuest(models.Model):
     )
     confirmed_presence = models.BooleanField(default=False, verbose_name='Presença')
     updated_at = models.DateTimeField(auto_now=True)
-    
+
     @property
     def full_name(self):
         return f'{self.first_name} {self.last_name or ""}'.strip()
