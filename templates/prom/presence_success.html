@@ -1,14 +1,35 @@
-{% extends "base.html" %}
+{% extends "base_prom.html" %}
 
-{% block title %}Obrigada!{% endblock title %}
+{% load static %}
+
+{% block title %}Obrigada{% endblock title %}
 
 {% block content %}
 
-<div class="container text-center">
-  <div class="card p-4 shadow-sm">
-    <h2>Presença Confirmada!</h2>
-    <p>Obrigada por confirmar sua presença.</p>
-  </div>
-</div>
+    <section style="background: rgba(0, 0, 0, .5) url('{% static "img/gio_cadeira.jpg" %}') no-repeat center center; background-size: cover; background-blend-mode: color;">
+        <div class="container min-vh-100 text-white d-flex flex-column align-items-center justify-content-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <h1 class="fw-bold display-3 mb-2 text-shadow">Muito Obrigada!</h1>
+            <p class="fs-4 mb-5 text-shadow">Ansiosa para viver esse dia ao lado de vocês!</p>
+            <p style="color: #ddd" class="fs-6 text-shadow">
+                Você será redirecionado para a página principal em 
+                <span id="countdown" class="fw-bold text-dourado">11</span> segundos.
+            </p>
+            <a href="/" class="btn btn-dourado mt-1">Voltar para a página principal</a>
+        </div>
+    </section>
+
+    <script>
+        let timeLeft = 11;
+        const countdownElement = document.getElementById('countdown');
+
+        const timer = setInterval(() => {
+            timeLeft--;
+            countdownElement.textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                window.location.href = '/baile/';
+            }
+        }, 1000);
+    </script>
 
 {% endblock content %}
