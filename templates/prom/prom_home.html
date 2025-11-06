@@ -65,10 +65,10 @@
                     Depois de anos de dedicação, estudos intensos e muitas conquistas, é hora de comemorar essa vitória! Você faz parte dessa trajetória, e por isso, sua presença na comemoração será um presente especial.
                 </p>
                 <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 text-capitalize">
-                    <a href="#" class="btn btn-light">
+                    <a href="#confirm-presence" class="btn btn-light">
                         Marque sua presença
                     </a>
-                    <a href="#" class="btn btn-outline-light">
+                    <a href="#event-details" class="btn btn-outline-light">
                         Saiba mais
                     </a>
                 </div>
@@ -78,7 +78,7 @@
     </div>
 </section>
 
-<section class="event py-5">
+<section id="event-details" class="event py-5">
     <div class="container text-center text-white">
         <h2 class="fw-bold display-6" data-aos="fade-up" data-aos-duration="1000">Detalhes do Evento</h2>
 
@@ -171,11 +171,39 @@
 
 </section>
 
-{% comment %} Formulário de confirmação {% endcomment %}
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Confirmar</button>
-</form>
+<section class="py-5" style="background-color: black">
+    <div class="container text-white overflow-hidden">
+        <div class="row row-cols-1 row-cols-md-2 align-items-center">
+            {% comment %} Form {% endcomment %}
+            <div class="col py-5" id="form">
+                <h3 class="h2 mb-3 fw-bold text-md-start text-center" data-aos="fade-right" data-aos-duration="1000">Ainda não confirmou sua&nbsp;presença?</h3>
+
+                <p class="mb-3 text-md-start text-center" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">Junte-se a quem já confirmou sua presença nessa festa!</p>
+
+                {% if form.errors %}
+                    <div class="alert alert-danger" role="alert" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <strong>{{ field.label }}:</strong> {{ error }}<br>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <form method="post" class="mx-auto border rounded p-4" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+
+                    <button type="submit" class="btn btn-dourado mt-3">Confirmar presença</button>
+
+                </form>
+            </div>
+            {% comment %} Image {% endcomment %}
+            <div class="col">
+                <img src="{% static 'img/gio_cadeira_diploma.jpg' %}" alt="Giovanna Urquisa" class="gio-form-img img-fluid mx-auto" data-aos="fade-left" data-aos-duration="1000">
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock content %}

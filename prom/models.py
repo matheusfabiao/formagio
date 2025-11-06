@@ -7,6 +7,10 @@ class PromGuest(models.Model):
         max_length=50, blank=True, null=True, verbose_name='Sobrenome'
     )
     confirmed_presence = models.BooleanField(default=False, verbose_name='Presença')
+    
+    @property
+    def full_name(self):
+        return f'{self.first_name} {self.last_name or ""}'.strip()
 
     def __str__(self):
         return f'{self.first_name} {self.last_name or ""}'.strip()

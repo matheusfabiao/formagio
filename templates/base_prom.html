@@ -39,6 +39,46 @@
         --dourado: #E6C766;
         }
 
+        @font-face {
+        font-family: 'Alata';
+        src: url('../static/fonts/Alata-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+        }
+
+        @font-face {
+        font-family: 'CocomatPro';
+        src: url('../static/fonts/cocomat-pro/CocomatPro-Bold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+        }
+
+        @font-face {
+        font-family: 'CocomatPro';
+        src: url('../static/fonts/cocomat-pro/CocomatPro-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+        }
+
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none !important;
+        list-style: none;
+        }
+
+        body {
+        font-family: 'Alata', sans-serif;
+        }
+
+        footer a {
+            color: var(--dourado);
+        }
+
         .bg-vinho-escuro {
         background-color: var(--vinho-escuro);
         }
@@ -207,18 +247,32 @@
         color: var(--preto);
         }
 
+        #myNavbar {
+        transition: background-color 200ms linear;
+        }
+
+        #myNavbar.scrolled {
+        background-color: var(--vinho-escuro);
+        {% comment %} soft box shadow bottom {% endcomment %}
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #myNavbar .nav-link {
+        color: var(--branco) !important;
+        }
+
     </style>
     {% block css %}{% endblock css %}
     {% comment %} Favicon {% endcomment %}
     <link rel="icon" href="{% static 'img/Logo Gio Sem o Nome.svg' %}">
 </head>
 <body class="bg-branco">
-    <header class="fixed-top box-shadow-bottom z-3">
-        <nav class="navbar navbar-expand-md navbar-dark" style="background-color: var(--vinho-escuro);">
+    <header class="fixed-top box-shadow-bottom z-3" id="myNavbar">
+        <nav class="navbar navbar-expand-md navbar-dark">
 
             <div class="container">
 
-                <a href="#" class="navbar-brand">
+                <a href="{% url "prom_home" %}" class="navbar-brand">
                     <img src="{% static 'img/Logo Gio Horizontal Branca.svg' %}" alt="Logo Giovanna Urquisa" style="height: 50px;">
                 </a>
 

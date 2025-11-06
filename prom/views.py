@@ -28,4 +28,4 @@ class PromHomeView(ListView):
 
 
 class PromSuccessView(TemplateView):
-    template_name = 'presence_success.html'
+    template_name = 'prom/presence_success.html'
