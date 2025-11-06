@@ -33,6 +33,40 @@
         z-index: 0;
     }
 
+    .gio-form-img {
+        mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+        ), linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 15%,
+            black 85%,
+            transparent 100%
+        );
+        mask-composite: intersect;
+    }
+
+    .hero-img {
+        mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+        ), linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 15%,
+            black 85%,
+            transparent 100%
+        ) !important;
+        mask-composite: intersect !important;
+    }
+
     @media (min-width: 768px) {
         .hero {
             background-image: url('{% static "img/gio_cadeira.jpg" %}');
@@ -44,19 +78,28 @@
             background-repeat: no-repeat;
         }
     }
+
+    @media (max-width: 767px) {
+        .hero {
+            padding-top: 7rem !important;
+        }
+        .hero .btn {
+            width: 100% !important;
+        }
+    }
 </style>
 
 {% endblock css %}
 
 {% block content %}
 
-<section class="hero pt-5">
+<section class="hero py-5">
     <div class="container">
         <div class="row min-vh-100 align-items-center row-cols-1 row-cols-md-2">
             <div class="col text-center text-md-start text-white">
                 <!-- Hero Content -->
                 <h1 class="display-3 fw-bold mb-1">
-                    Giovanna Urquisa
+                    Giovanna&nbsp;Urquisa
                 </h1>
                 <h2 class="display-6 mb-4">
                     Baile de Formatura
@@ -64,7 +107,7 @@
                 <p>
                     Depois de anos de dedicação, estudos intensos e muitas conquistas, é hora de comemorar essa vitória! Você faz parte dessa trajetória, e por isso, sua presença na comemoração será um presente especial.
                 </p>
-                <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 text-capitalize">
+                <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 text-capitalize mt-4">
                     <a href="#confirm-presence" class="btn btn-light">
                         Marque sua presença
                     </a>
@@ -72,7 +115,7 @@
                         Saiba mais
                     </a>
                 </div>
-                <img src="{% static 'img/gio_cadeira.jpg' %}" alt="Giovanna Urquisa" class="img-fluid mt-3 d-block d-md-none mx-auto">
+                <img src="{% static 'img/gio_cadeira.jpg' %}" alt="Giovanna Urquisa" class="hero-img img-fluid mt-5 d-block d-md-none mx-auto">
             </div>
         </div>
     </div>
@@ -152,8 +195,8 @@
             <div class="d-flex flex-column align-items-center text-center">
                 <!-- Texto e botão -->
                 <div>
-                    <h3 class="fs-1 fw-bold text-white mb-3">Finalmente, festa?</h3>
-                    <p class="text-light fs-5 mb-4">
+                    <h3 class="fs-1 fw-bold text-white mb-3">🎉 Finalmente, festa?</h3>
+                    <p class="text-light fs-5 mb-4" style="max-width: 600px;">
                         Venha preparado para curtir e dançar muito comigo para fecharmos com chave de ouro esse ciclo tão especial.
                     </p>
                     <a href="https://www.google.com/maps/search/?api=1&query=Passo+dos+Le%C3%B5es" 
@@ -172,16 +215,16 @@
 </section>
 
 {% comment %} form section {% endcomment %}
-<section class="py-5" style="background-color: black">
+<section class="py-5" style="background-color: black" id="presence">
     <div class="container text-white overflow-hidden">
-        <div class="row row-cols-1 row-cols-md-2 align-items-center">
+        <div class="row row-cols-1 row-cols-lg-2 align-items-center">
             {% comment %} Form {% endcomment %}
             <div class="col py-5" id="form">
 
-                <div class="border rounded mt-4 p-5">
+                <div class="border rounded mt-4 p-3 p-sm-5">
                     <h2 class="text-center text-dourado fw-bold mb-4">Convidados Confirmados</h2>
 
-                    <div class="row row-cols-1 row-cols-md-2 mb-5">
+                    <div class="row row-cols-1 row-cols-sm-2 mb-5">
 
                         {% for guest in confirmed_guests %}
                         <div class="col">
@@ -231,10 +274,9 @@
         </div>
 
         <div class="d-flex flex-column align-items-center text-center justify-content-center">
-            <p class="lead text-white text-center">Você pode ver a lista completa de convidados aqui:</p>
-            <a href="#" class="btn btn-dourado">Lista de Convidados Confirmados</a>
+            <p class="h4 text-white text-center">Você pode ver a lista completa de convidados aqui:</p>
+            <a href="{% url "prom_guests" %}" class="btn btn-dourado btn-lg fs-6 fw-semibold mt-3">Lista de Convidados Confirmados</a>
         </div>
-
 
     </div>
 </section>

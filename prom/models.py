@@ -7,6 +7,7 @@ class PromGuest(models.Model):
         max_length=50, blank=True, null=True, verbose_name='Sobrenome'
     )
     confirmed_presence = models.BooleanField(default=False, verbose_name='Presença')
+    updated_at = models.DateTimeField(auto_now=True)
     
     @property
     def full_name(self):

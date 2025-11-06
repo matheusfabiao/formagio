@@ -27,5 +27,14 @@ class PromHomeView(ListView):
         return redirect('prom_thanks')
 
 
+class PromGuestsView(ListView):
+    model = PromGuest
+    template_name = 'prom/guests.html'
+    context_object_name = 'guests'
+
+    def get_queryset(self):
+        return PromGuest.objects.filter(confirmed_presence=True).order_by('first_name', 'last_name')
+
+
 class PromSuccessView(TemplateView):
     template_name = 'prom/presence_success.html'

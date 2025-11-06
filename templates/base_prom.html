@@ -71,6 +71,10 @@
         list-style: none;
         }
 
+        html {
+            scroll-padding-top: 80px; /* altura do menu */
+        }
+
         body {
         font-family: 'Alata', sans-serif;
         }
@@ -283,19 +287,16 @@
                 <div class="navbar-collapse collapse text-center justify-content-end" id="nav-principal">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Início</a>
+                            <a href="{% url "prom_home" %}" class="nav-link">Início</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Sobre</a>
+                            <a href="#event-details" class="nav-link">Evento</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Evento</a>
+                            <a href="#presence" class="nav-link">Presença</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Presença</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Convidados</a>
+                            <a href="{% url "prom_guests" %}" class="nav-link">Convidados</a>
                         </li>
                     </ul>
                 </div>

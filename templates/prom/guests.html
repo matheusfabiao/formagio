@@ -1,0 +1,115 @@
+{% extends "base_prom.html" %}
+
+{% block title %}Convidados Confirmados{% endblock title %}
+
+{% block css %}
+
+<style>
+    .guests-section {
+        background-color: black;
+        padding: 8rem 0;
+        position: relative;
+        color: white;
+    }
+
+    .guests-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../static/img/gio_cadeira.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 0.5;
+        z-index: 0;
+    }
+
+    .guests-section .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .table {
+        --bs-table-bg: transparent;
+        --bs-table-border-color: var(--dourado);
+        --bs-table-color: white;
+    }
+
+    .table th, .table td {
+        vertical-align: middle;
+    }
+
+    .table thead th {
+        color: var(--dourado);
+        font-weight: bold;
+        border-bottom-width: 2px;
+    }
+
+    .table tbody tr {
+        transition: background-color 0.3s ease;
+    }
+
+    .table tbody tr:hover {
+        background-color: rgba(162, 128, 90, 0.15);
+    }
+
+    .table tbody tr:hover td,
+    .table tbody tr:hover th {
+        color: white !important;
+    }
+
+    .btn-back {
+        background-color: var(--dourado);
+        color: var(--vinho-escuro);
+        border: none;
+        font-weight: bold;
+    }
+
+    .btn-back:hover {
+        background-color: #cba37a;
+        color: var(--vinho-escuro);
+    }
+</style>
+
+{% endblock css %}
+
+{% block content %}
+<section class="guests-section">
+    <div class="container">
+        <h1 class="text-center display-4 fw-bold mb-5 text-dourado">Lista de Convidados Confirmados</h1>
+        
+        <div class="table-responsive">
+            <table class="table table-hover text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Confirmado(a) em</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for guest in guests %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ guest.full_name }}</td>
+                        <td>{{ guest.updated_at|date:"d/m/Y à\s H:i" }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="3" class="text-center">Nenhum convidado confirmado ainda.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="{% url 'prom_home' %}" class="btn btn-back btn-lg">Voltar para a Página Inicial</a>
+        </div>
+    </div>
+</section>
+{% endblock content %}
