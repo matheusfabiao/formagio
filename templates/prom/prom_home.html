@@ -171,38 +171,71 @@
 
 </section>
 
+{% comment %} form section {% endcomment %}
 <section class="py-5" style="background-color: black">
     <div class="container text-white overflow-hidden">
         <div class="row row-cols-1 row-cols-md-2 align-items-center">
             {% comment %} Form {% endcomment %}
             <div class="col py-5" id="form">
-                <h3 class="h2 mb-3 fw-bold text-md-start text-center" data-aos="fade-right" data-aos-duration="1000">Ainda não confirmou sua&nbsp;presença?</h3>
 
-                <p class="mb-3 text-md-start text-center" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">Junte-se a quem já confirmou sua presença nessa festa!</p>
+                <div class="border rounded mt-4 p-5">
+                    <h2 class="text-center text-dourado fw-bold mb-4">Convidados Confirmados</h2>
 
-                {% if form.errors %}
-                    <div class="alert alert-danger" role="alert" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
-                        {% for field in form %}
-                            {% for error in field.errors %}
-                                <strong>{{ field.label }}:</strong> {{ error }}<br>
-                            {% endfor %}
+                    <div class="row row-cols-1 row-cols-md-2 mb-5">
+
+                        {% for guest in confirmed_guests %}
+                        <div class="col">
+                            <p class="fs-6">
+                                <i class="bi bi-check-circle-fill text-dourado me-1"></i>
+                                {{ guest.full_name }}
+                            </p>
+                        </div>
+                        {% empty %}
+                        <div class="col">
+                            <p class="fs-6 text-center text-white">
+                                Seja o primeiro a confirmar presença!
+                            </p>
+                        </div>
                         {% endfor %}
+
                     </div>
-                {% endif %}
 
-                <form method="post" class="mx-auto border rounded p-4" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
-                    {% csrf_token %}
-                    {{ form.as_p }}
+                    <hr class="mb-5">
 
-                    <button type="submit" class="btn btn-dourado mt-3">Confirmar presença</button>
+                    <h2 class="text-center text-dourado fw-bold mb-2">Não confirmou presença?</h2>
+                    <p class="text-center fs-6 mb-5">Junte-se a quem já confirmou a presença nessa festa!</p>
 
-                </form>
+                    <form method="post" class="mx-auto">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="form-group">
+                                {{ field.errors }}
+                                <label for="{{ field.id_for_label }}" class="form-label me-2">{{ field.label }}</label>
+                                {{ field }}
+                                {% if field.help_text %}
+                                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+
+                        <button type="submit" class="btn btn-dourado mt-3 w-100">Confirmar presença</button>
+
+                    </form>
+                </div>
+
             </div>
             {% comment %} Image {% endcomment %}
             <div class="col">
                 <img src="{% static 'img/gio_cadeira_diploma.jpg' %}" alt="Giovanna Urquisa" class="gio-form-img img-fluid mx-auto" data-aos="fade-left" data-aos-duration="1000">
             </div>
         </div>
+
+        <div class="d-flex flex-column align-items-center text-center justify-content-center">
+            <p class="lead text-white text-center">Você pode ver a lista completa de convidados aqui:</p>
+            <a href="#" class="btn btn-dourado">Lista de Convidados Confirmados</a>
+        </div>
+
+
     </div>
 </section>
 

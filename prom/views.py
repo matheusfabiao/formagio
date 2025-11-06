@@ -11,7 +11,7 @@ class PromHomeView(ListView):
     context_object_name = 'confirmed_guests'
 
     def get_queryset(self):
-        return PromGuest.objects.filter(confirmed_presence=True).order_by('-id')[:6]
+        return PromGuest.objects.filter(confirmed_presence=True).order_by('-id')[:10]
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
